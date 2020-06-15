@@ -1,0 +1,17 @@
+galaxy_info:
+  role_name: wkhtmltopdf
+  author: vdzhorov
+  description: Install wkhtmltopdf.
+  company: "Delta.BG"
+  license: "MIT"
+  min_ansible_version: 2.4
+  platforms:
+    - name: EL
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - stretch
+        - buster
+  galaxy_tags:
+    - wkhtmltopdf
