@@ -1,0 +1,13 @@
+---
+- name: Install wkhtmltopdf (RedHad or CentOS 7).
+  yum:
+    name: "{{ wkhtmltopdf_download_dest }}/wkhtmltox-{{ wkhtmltopdf_version }}.centos8.x86_64.rpm"
+    state: present
+  when: ansible_distribution_major_version == "7"
+
+- name: Install wkhtmltopdf (RedHad or CentOS 8).
+  dnf:
+    name: "{{ wkhtmltopdf_download_dest }}/wkhtmltox-{{ wkhtmltopdf_version }}.centos8.x86_64.rpm"
+    state: present
+  when: ansible_distribution_major_version == "8"
+...

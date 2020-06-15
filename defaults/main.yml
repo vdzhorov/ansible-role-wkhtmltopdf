@@ -1,0 +1,5 @@
+---
+wkhtmltopdf_version: "0.12.6-1"
+wkhtmltopdf_download_url: "https://github.com/wkhtmltopdf/packaging/releases/download/{{ wkhtmltopdf_version }}/wkhtmltox-{{ wkhtmltopdf_version }}.centos8.x86_64.rpm"
+wkhtmltopdf_download_dest: "/usr/local/src"
+...

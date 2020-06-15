@@ -1,0 +1,9 @@
+---
+- name: Download wkhtmltopdf package.
+  get_url:
+    url: "{{ wkhtmltopdf_download_url }}"
+    dest: "{{ wkhtmltopdf_download_dest }}"
+
+- include: RedHat.yml
+  when: ansible_distribution == "CentOS" or ansible_distribution == "RedHat"
+...
