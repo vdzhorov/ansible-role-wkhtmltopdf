@@ -1,6 +1,7 @@
 ---
-- set_fact:
-    wkhtmltopdf_download_url: "https://github.com/wkhtmltopdf/packaging/releases/download/{{ wkhtmltopdf_version }}/wkhtmltox-{{ wkhtmltopdf_version }}.centos{{ ansible_distribution_major_version }}.x86_64.rpm"
+- name: Set wkhtmltopdf_download_url var
+  set_fact:
+    wkhtmltopdf_download_url: "{{ wkhtmltopdf_base_download_url }}/{{ wkhtmltopdf_version }}/wkhtmltox-{{ wkhtmltopdf_version }}.centos{{ ansible_distribution_major_version }}.x86_64.rpm"
 
 - name: Download wkhtmltopdf package.
   get_url:
