@@ -1,3 +1,6 @@
+---
+dependencies: []
+
 galaxy_info:
   role_name: wkhtmltopdf
   author: vdzhorov
@@ -16,3 +19,4 @@ galaxy_info:
         - buster
   galaxy_tags:
     - wkhtmltopdf
+...
