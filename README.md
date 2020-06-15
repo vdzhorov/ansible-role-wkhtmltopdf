@@ -6,6 +6,10 @@ An Ansible Role that installs wkhtmltopdf on RedHat/CentOS or Debian.
 
 None
 
+## Installation
+
+`ansible-galaxy install vdzhorov.wkhtmltopdf`
+
 ## Role Variables
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
