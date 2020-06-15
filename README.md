@@ -1,6 +1,6 @@
 # Ansible Role: wkhtmltopdf
 
-An Ansible Role that installs wkhtmltopdf on RedHat/CentOS or Debian.
+An Ansible Role that installs wkhtmltopdf on RedHat/CentOS, Debian and Ubuntu.
 
 ## Requirements
 
