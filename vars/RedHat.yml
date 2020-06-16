@@ -1,0 +1,3 @@
+---
+__wkhtmltopdf_download_url: "{{ wkhtmltopdf_base_download_url }}/{{ wkhtmltopdf_version }}/wkhtmltox-{{ wkhtmltopdf_version }}.centos{{ ansible_distribution_major_version }}.x86_64.rpm"
+...

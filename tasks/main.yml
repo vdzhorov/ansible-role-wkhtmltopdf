@@ -1,3 +1,23 @@
 ---
-- include: "{{ ansible_os_family }}.yml"
+- name: Include OS-specific variables (Debian).
+  include_vars: "{{ ansible_os_family }}.yml"
+  when: ansible_os_family == 'Debian'
+
+- name: Include OS-specific variables (RedHat).
+  include_vars: "{{ ansible_os_family }}.yml"
+  when:
+  - ansible_os_family == 'RedHat'
+  - ansible_distribution != 'Fedora'
+
+- name: Set wkhtmltopdf_download_url
+  set_fact:
+    wkhtmltopdf_download_url: "{{ __wkhtmltopdf_download_url }}"
+
+- name: Download wkhtmltopdf package.
+  get_url:
+    url: "{{ wkhtmltopdf_download_url }}"
+    dest: "{{ wkhtmltopdf_download_dest }}"
+
+- name: Include main installation tasks.
+  include: "{{ ansible_os_family }}.yml"
 ...

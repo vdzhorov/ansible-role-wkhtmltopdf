@@ -1,22 +1,10 @@
 ---
-- name: Set wkhtmltopdf_download_url var
-  set_fact:
-    wkhtmltopdf_download_url: "{{ wkhtmltopdf_base_download_url }}/{{ wkhtmltopdf_version }}/wkhtmltox-{{ wkhtmltopdf_version }}.centos{{ ansible_distribution_major_version }}.x86_64.rpm"
-
-- name: Download wkhtmltopdf package.
-  get_url:
-    url: "{{ wkhtmltopdf_download_url }}"
-    dest: "{{ wkhtmltopdf_download_dest }}"
-
-- name: Install wkhtmltopdf (RedHad or CentOS 7).
+- name: Install wkhtmltopdf (CentOS).
   yum:
-    name: "{{ wkhtmltopdf_download_dest }}/wkhtmltox-{{ wkhtmltopdf_version }}.centos7.x86_64.rpm"
+    name: "{{ wkhtmltopdf_download_dest }}/wkhtmltox-{{ wkhtmltopdf_version }}.centos{{ ansible_distribution_major_version }}.x86_64.rpm"
     state: present
-  when: ansible_distribution_major_version == "7"
-
-- name: Install wkhtmltopdf (RedHad or CentOS 8).
-  dnf:
-    name: "{{ wkhtmltopdf_download_dest }}/wkhtmltox-{{ wkhtmltopdf_version }}.centos8.x86_64.rpm"
-    state: present
-  when: ansible_distribution_major_version == "8"
+  when: >
+    (ansible_distribution == "CentOS") and
+    (ansible_distribution_major_version == "7" or
+    ansible_distribution_major_version == "8")
 ...
