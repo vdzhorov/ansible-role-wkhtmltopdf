@@ -24,4 +24,8 @@ galaxy_info:
         - focal
   galaxy_tags:
     - wkhtmltopdf
+    - wkhtml
+    - htmltopdf
+    - pdf
+    - linux
 ...
